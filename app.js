@@ -8,6 +8,6 @@ const app = express()
 app.use(express.json())
 app.use(morgan('combined'))
 app.use('/users', userRoutes)
-app.use('/admins', adminRoutes)
+app.use('/users/admin', adminRoutes)
 
 module.exports = app
