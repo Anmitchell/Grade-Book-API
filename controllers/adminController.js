@@ -1,9 +1,79 @@
 const User = require('../models/user')
 const Course = require('../models/course')
 
-// CRUD for Users
+/********************************************/
+/********** Managing user accounts **********/
+/********************************************/
 
-// CRUD for courses
+// admin can create other user accounts that are admins, teachers, or students
+exports.createUser = async (req, res) => {
+    try {
+        if (req.user.role === "admin") {
+            const user = new User(req.body)
+            user.schoolId = user._id
+            user.schoolId = user.schoolId.slice(16)
+            await user.save()
+            const token = await user.generateAuthToken()
+            res.json({ user, token })
+        }
+    } catch (error) {
+        res.status(400).json( {message: error.message} )
+    }
+}
+
+exports.showUser = async (req, res) => {
+    try {
+        if (req.user.role === 'admin') {
+            const foundUser = await User.findOne( {_id: req.params.id} )
+            res.json(foundUser)
+        }
+    } catch (error) {
+        res.status(400).json( {message: error.message} )
+    }
+}
+
+// admin can view all users in system
+exports.showAllUsers = async (req, res) => {
+    try {
+        if (req.user.role === 'admin') {
+            const foundUsers = await User.find({})
+            res.json(foundUsers)
+        }
+    } catch (error) {
+        res.status(400).json( {message: error.message} )
+    }
+}
+
+// admin can update teacher or student account
+
+exports.updateUser = async (req, res) => {
+    try {
+        if (req.user.role === 'admin') {
+            const user = await User.findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
+            res.json(user)
+        }
+    } catch (error) {
+        res.status(400).json( {message: error.message })
+    }
+}
+
+// admin can delete teacher or student account
+
+exports.deleteUser = async (req, res) => {
+    try {
+        if (req.user.role === "admin") {
+            await User.deleteOne( {_id: req.params.id} )
+            res.sendStatus(204)
+        }
+    } catch (error) {
+        res.status(400).json({ message: error.message })
+    }
+}
+
+/********************************************/
+/********** Managing courses **********/
+/********************************************/
+
 exports.createCourse = async (req, res) => {
     try {
         if (req.user.role === "admin") {
@@ -46,12 +116,10 @@ exports.updateCourse = async (req, res) => {
 exports.deleteCourse = async (req, res) => {
     try {
         if (req.user.role === 'admin') {
-            const course = await Course.findOneAndDelete({_id: req.params.id})
+            await Course.findOneAndDelete( {_id: req.params.id} )
             res.sendStatus(204)
         }
     } catch (error) {
         res.status(400).json( {message: error.message})
     }
 }
-
-// Crud for subjects

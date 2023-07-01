@@ -10,6 +10,10 @@ router.put('/course/:id', userController.auth, adminController.updateCourse)
 router.delete('/course/:id', userController.auth, adminController.deleteCourse)
 
 // User CRUD
+router.post('/user', userController.auth, adminController.createUser)
+router.get('/user', userController.auth, adminController.showAllUsers)
+router.get('/user/:id', userController.auth, adminController.showUser)
+router.put('/user/:id', userController.auth, adminController.updateUser)
+router.delete('/user/:id', userController.auth, adminController.deleteUser)
 
 module.exports = router
-

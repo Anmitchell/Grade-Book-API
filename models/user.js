@@ -1,4 +1,3 @@
-
 const { model, Schema } = require('mongoose')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
@@ -12,7 +11,7 @@ const userSchema = new Schema({
     email: {type: String, required: true, unique: true},
     password: {type: String, required: true},
     role: { type: String, enum: ['admin', 'teacher', 'student'], required: true},
-    courses: [{ type: Schema.Types.ObjectId, ref: 'Course'}]
+    courses: [{ type: Schema.Types.ObjectId, ref: 'Course'}] // matters for students/grades
 }, {
     timestamps: true
 })

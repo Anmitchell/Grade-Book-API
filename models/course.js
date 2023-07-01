@@ -5,7 +5,7 @@ const courseSchema = new Schema ({
     title: {type: String, required: true},
     subject: {type: String, required: true},
     grade: {type: String}, // do not make required, teachers do not require a grade
-    users: [{ type: Schema.Types.ObjectId, ref: 'User'}]
+    users: [ {type: Schema.Types.ObjectId, ref: 'User'} ] // matters for teacher and students involved in course
 }, {
     timestamps: true
 })

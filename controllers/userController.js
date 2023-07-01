@@ -21,6 +21,8 @@ exports.auth = async (req, res, next) => {
 exports.createUser = async (req, res) => {
     try {
         const user = new User(req.body)
+        user.schoolId = user._id
+        user.schoolId = user.schoolId.slice(16)
         await user.save()
         const token = await user.generateAuthToken()
         res.json({ user, token })
