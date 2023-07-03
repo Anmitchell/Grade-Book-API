@@ -24,7 +24,7 @@ exports.createUser = async (req, res) => {
 exports.showUser = async (req, res) => {
     try {
         if (req.user.role === 'admin') {
-            const foundUser = await User.findOne( {_id: req.params.id} )
+            const foundUser = await User.findOne({})
             res.json(foundUser)
         }
     } catch (error) {
@@ -77,7 +77,9 @@ exports.deleteUser = async (req, res) => {
 exports.createCourse = async (req, res) => {
     try {
         if (req.user.role === "admin") {
-            req.body.user = req.user._id
+            console.log(`question 1: ${req.body.user}`) // what is this information
+            req.body.user = req.user._id // what is happening here?
+            console.log(` question 2: ${req.user._id}`)
             const course = await Course.create(req.body)
             req.user.course?
             req.user.course.addToSet({ _id: course._id }):
@@ -123,3 +125,5 @@ exports.deleteCourse = async (req, res) => {
         res.status(400).json( {message: error.message})
     }
 }
+
+// current admin token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGEzMTgxYWI3NmQxZGJmNjkwZjY0OTIiLCJpYXQiOjE2ODg0MTAxMzh9.v-Y4EjmAbVPPKaIwcvjrS3w4604B_7beGrI__Hhh4eE

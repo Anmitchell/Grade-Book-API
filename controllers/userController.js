@@ -21,8 +21,8 @@ exports.auth = async (req, res, next) => {
 exports.createUser = async (req, res) => {
     try {
         const user = new User(req.body)
-        user.schoolId = user._id
-        user.schoolId = user.schoolId.slice(16)
+        user.schoolId = user._id // assign mongodb id to schoolId
+        user.schoolId = user.schoolId.slice(16) // shorten unique id given by mongodb
         await user.save()
         const token = await user.generateAuthToken()
         res.json({ user, token })
