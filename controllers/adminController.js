@@ -77,9 +77,7 @@ exports.deleteUser = async (req, res) => {
 exports.createCourse = async (req, res) => {
     try {
         if (req.user.role === "admin") {
-            console.log(`question 1: ${req.body.user}`) // what is this information
-            req.body.user = req.user._id // what is happening here?
-            console.log(` question 2: ${req.user._id}`)
+            req.body.user = req.user._id
             const course = await Course.create(req.body)
             req.user.course?
             req.user.course.addToSet({ _id: course._id }):
