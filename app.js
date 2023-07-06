@@ -3,6 +3,7 @@ const morgan = require('morgan')
 const userRoutes = require('./routes/userRoutes')
 const adminRoutes = require('./routes/adminRoutes')
 const teacherRoutes = require('./routes/teacherRoutes')
+const studentRoutes = require('./routes/studentRoutes')
 
 const app = express()
 
@@ -11,7 +12,7 @@ app.use(morgan('combined'))
 app.use('/users', userRoutes)
 app.use('/users/admins', adminRoutes)
 app.use('/users/teachers', teacherRoutes)
-// app.use('/users/students, studentRoutes)
+app.use('/users/students', studentRoutes)
 
 module.exports = app
 

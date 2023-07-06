@@ -5,7 +5,7 @@ const secret = process.env.SECRET_KEY
 
 // Template for documents(objects) added to database
 const userSchema = new Schema({
-    schoolId: {type: String, required: true},
+    schoolId: {type: String},
     firstName: {type: String, required: true},
     lastName: {type: String, required: true},
     email: {type: String, required: true, unique: true},
