@@ -26,6 +26,7 @@
 
 
 ## Technologies Used
+- git
 - node.js - version 19.8.1 
 - nodemon - version 
 - express.js - version
@@ -57,6 +58,13 @@ List the ready features here:
 
 ## Setup
 What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
+### initial setup
+Create a new node.js project:
+```
+touch server.js
+mkdir filename
+cd filename
+```
 
 Proceed to describe how to install / setup one's local environment / get started with the project.
 
