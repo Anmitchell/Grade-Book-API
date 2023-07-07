@@ -68,7 +68,9 @@ touch server.js
 npm init -y
 touch app.js
 ```
-### 
+- app.js is needed to store the app object from express
+- server.js is needed to import the app, and setup our connections with app & mongoose
+- this will allow us to test app.js independent of mongodb
 
 Proceed to describe how to install / setup one's local environment / get started with the project.
 
