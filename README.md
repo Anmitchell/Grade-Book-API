@@ -64,7 +64,11 @@ Create a new node.js project:
 touch server.js
 mkdir filename
 cd filename
+touch server.js
+npm init -y
+touch app.js
 ```
+### 
 
 Proceed to describe how to install / setup one's local environment / get started with the project.
 
