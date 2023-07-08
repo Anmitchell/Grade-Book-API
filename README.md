@@ -24,27 +24,42 @@ Grade management:
 
 <!-- Categorize by frameworks, environments, standards, etc -->
 ## Technologies Used
-- git
-- node.js - version 19.8.1 
-- nodemon - version 
-- express.js - version
-- mongoose - version
-- mongoDB - version
-- JWTwebtoken - version
-- bcrypt - version
-- morgan - version
-- jest - version
-- supertest - version
-- artillery - version
-- javascript - version ?
-- postman - version ?
+#### Version Control:
+- git - v2.40.0
+#### Runtime Environment: 
+- node.js - v19.8.1 
+#### Automatic Node app restart:
+- nodemon - v2.0.22
+#### Testing
+- supertest - v6.3.3
+- jest - v29.5.0
+- mongodb-memory-server - v8.13.0
+- postman - v10.15.4
+#### Package Mangager:
+- npm - v9.5.1
+#### Web Frameworks:
+- express.js - v4.18.2
+#### Object Database Modeling
+- mongoose - v7.3.1
+#### Database:
+- mongoDB - Database
+#### User Authentication
+- Jsonwebtoken - v9.0.0
+#### Password Encryption
+- bcrypt - v5.1.0
+#### Information Security:
+- dotenv - v16.3.1
+#### Middleware:
+- morgan - 1.10.0
+#### Load Testing Platform
+- artillery - v1.7.9
 
 <!-- What is considered a feature? -->
 ## Features
 List the ready features here:
 - Admin creates, read, updates, and deletes other users and courses.
-- Awesome feature 2
-- Awesome feature 3
+- Teachers can select and view courses and drop student from course
+- Students can enroll, view, and drop course
 
 
 ## Screenshots
@@ -67,16 +82,15 @@ Install nodemon globally to automatically restart your node application when it 
 ```
 sudo npm install -g nodemon
 ```
-<!-- include image of files that should have populated with project here, and maybe img of package.json?-->
 
 Once initial setup is complete, open project:
 - Add your connection string to .env file
 - Add Port
 - ADD secret for password encryption
 ```
-MONGO_URI=MongoDB driver connection string here"
-PORT=port number here
-SECRET_KEY=secret here
+MONGO_URI=MongoDB_driver_connection_string_here
+PORT=port_number_here
+SECRET_KEY=secret_here
 ```
 
 ## Usage
@@ -96,9 +110,15 @@ For load testing server:
 npm run load
 ```
 
+### How to make an api request making postman
+- what port
+- what url
+- How to run the app without dev mode?
+
 ## Project Status
 <!-- Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why. -->
-Project is: _in progress
+#### Project is: _in progress
+Trello Board link (https://trello.com/invite/b/GZ7lThKP/ATTI766c49cf2d11fa16636bc80dd03d10019DC0117F/grade-book-api)
 
 ## Room for Improvement
 
@@ -112,6 +132,7 @@ To do:
 - Teacher can assign students grade for assignments and course
 - Create a student transcript
 - Provide testing for all routes
+- Make api more efficient
 
 
 ## Acknowledgements
