@@ -17,7 +17,7 @@
 Rest API designed for users in a school with one of three designated roles:
 - Admin manages other user accounts and school courses.
 - Teacher select courses they will teach. As well as, distribute grades for students in the course and their given assignments.
-- Students select courses they will enroll in and can view a transcript and grades given to assignments.
+- Students enroll in courses and can view a transcript and grades given to assignments.
 
 Grade management:
 - Grades are calculated as percentages and produces a letter grade. 
@@ -110,10 +110,13 @@ For load testing server:
 npm run load
 ```
 
-### How to make an api request making postman
-- what port
-- what url
-- How to run the app without dev mode?
+### How to make an api request using Postman
+- Make requests on port 3000
+- url - http://localhost:3000
+- How to run app without dev mode: 
+```
+nodemon server.js
+```
 
 ## Project Status
 <!-- Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why. -->
@@ -137,4 +140,4 @@ To do:
 
 ## Acknowledgements
 Give credit here.
-- Many thanks to general assembly staff for input and guidance.
+- Many thanks to general assembly instructors for input and guidance.
