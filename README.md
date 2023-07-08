@@ -24,32 +24,32 @@ Grade management:
 
 <!-- Categorize by frameworks, environments, standards, etc -->
 ## Technologies Used
-#### Version Control:
+#### Version Control
 - git - v2.40.0
-#### Runtime Environment: 
+#### Runtime Environment
 - node.js - v19.8.1 
-#### Automatic Node app restart:
+#### Automatic Node app restart
 - nodemon - v2.0.22
 #### Testing
 - supertest - v6.3.3
 - jest - v29.5.0
 - mongodb-memory-server - v8.13.0
 - postman - v10.15.4
-#### Package Mangager:
+#### Package Mangager
 - npm - v9.5.1
-#### Web Frameworks:
+#### Web Frameworks
 - express.js - v4.18.2
 #### Object Database Modeling
 - mongoose - v7.3.1
-#### Database:
+#### Database
 - mongoDB - Database
 #### User Authentication
 - Jsonwebtoken - v9.0.0
 #### Password Encryption
 - bcrypt - v5.1.0
-#### Information Security:
+#### Information Security
 - dotenv - v16.3.1
-#### Middleware:
+#### Middleware
 - morgan - 1.10.0
 #### Load Testing Platform
 - artillery - v1.7.9
@@ -57,13 +57,12 @@ Grade management:
 <!-- What is considered a feature? -->
 ## Features
 List the ready features here:
-- Admin creates, read, updates, and deletes other users and courses.
+- Admin creates, read, updates, and deletes other users and courses
 - Teachers can select and view courses and drop student from course
 - Students can enroll, view, and drop course
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 <!--What would be considered useful screenshots?-->
 <!-- Include wireframe img here -->
@@ -72,7 +71,7 @@ List the ready features here:
 ## Setup
 <!-- What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located? -->
 <!--What should I include for project requirements/ dependencies-->
-Open Terminal and run the following commands:
+Open Terminal and run the following commands
 ```
 git clone `https://example-here`
 npm install
@@ -83,7 +82,7 @@ Install nodemon globally to automatically restart your node application when it 
 sudo npm install -g nodemon
 ```
 
-Once initial setup is complete, open project:
+Once initial setup is complete, open project
 - Add your connection string to .env file
 - Add Port
 - ADD secret for password encryption
@@ -97,22 +96,21 @@ SECRET_KEY=secret_here
 <!-- How does one go about using it?
 Provide various use cases and code examples here. -->
 <!--Are -->
-Run server to test API routes:
+Run server to test API routes
 ```
 npm run dev
 ```
-For testing Routes in API run test:
+For testing Routes in API run test
 ```
 npm run test
 ```
-For load testing server:
+For load testing server
 ```
 npm run load
 ```
 
 ### How to make an api request using Postman
-- Make requests on port 3000
-- url - http://localhost:3000
+- url - http://localhost:3000/users
 - How to run app without dev mode: 
 ```
 nodemon server.js
@@ -139,5 +137,4 @@ To do:
 
 
 ## Acknowledgements
-Give credit here.
 - Many thanks to general assembly instructors for input and guidance.
