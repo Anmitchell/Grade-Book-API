@@ -1,5 +1,5 @@
 # Grade Book API
-> A partially featured api designed to simulate a college school api possessing admins, teachers, and student users and  Instructors input and distribute student grades. Assignments and the overall grade for the course are expressed as letter grades.
+> A grade book api designed with admin, teachers and student users.
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -11,20 +11,18 @@
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
-* [Contact](#contact)
 
 
 ## General Information
-- Enrollment and Gradebook system that partially simulates college.
-- Admins can create accounts for other admins, teachers, students, and courses upon request.
-- Teachers select courses they wish to teach and distribute letter grades to students and assignments given to them.
-- Students can enroll in course, view courses/assignment grades, and drop course they are enrolled in.
+Rest API designed for users in a school with one of three designated roles:
+- Admin manages other user accounts and school courses.
+- Teacher select courses they will teach. As well as, distribute grades for students in the course and their given assignments.
+- Students select courses they will enroll in and can view a transcript and grades given to assignments.
 
-- What is the purpose of your project?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+Grade management:
+- Grades are calculated as percentages and produces a letter grade. 
 
-
+<!-- Categorize by frameworks, environments, standards, etc -->
 ## Technologies Used
 - git
 - node.js - version 19.8.1 
@@ -38,15 +36,13 @@
 - jest - version
 - supertest - version
 - artillery - version
-- vscode - version ?
-- iterm2 - version ?
 - javascript - version ?
 - postman - version ?
 
-
+<!-- What is considered a feature? -->
 ## Features
 List the ready features here:
-- Awesome feature 1
+- Admin creates, read, updates, and deletes other users and courses.
 - Awesome feature 2
 - Awesome feature 3
 
@@ -54,63 +50,70 @@ List the ready features here:
 ## Screenshots
 ![Example screenshot](./img/screenshot.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
+<!--What would be considered useful screenshots?-->
+<!-- Include wireframe img here -->
 
 
 ## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
-### initial setup
-Create a new node.js project:
+<!-- What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located? -->
+<!--What should I include for project requirements/ dependencies-->
+Open Terminal and run the following commands:
 ```
-touch server.js
-mkdir filename
-cd filename
-touch server.js
-npm init -y
-touch app.js
+git clone `https://example-here`
+npm install
+touch .env
 ```
-- app.js is needed to store the app object from express
-- server.js is needed to import the app, and setup our connections with app & mongoose
-- this will allow us to test app.js independent of mongodb
+Install nodemon globally to automatically restart your node application when it detects any changes. This means that you do not have to stop and restart your applications in order for your changes to take effect.
+```
+sudo npm install -g nodemon
+```
+<!-- include image of files that should have populated with project here, and maybe img of package.json?-->
 
-Proceed to describe how to install / setup one's local environment / get started with the project.
-
+Once initial setup is complete, open project:
+- Add your connection string to .env file
+- Add Port
+- ADD secret for password encryption
+```
+MONGO_URI=MongoDB driver connection string here"
+PORT=port number here
+SECRET_KEY=secret here
+```
 
 ## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
-
+<!-- How does one go about using it?
+Provide various use cases and code examples here. -->
+<!--Are -->
+Run server to test API routes:
+```
+npm run dev
+```
+For testing Routes in API run test:
+```
+npm run test
+```
+For load testing server:
+```
+npm run load
+```
 
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
-
+<!-- Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why. -->
+Project is: _in progress
 
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
 
 Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
+- Restructure models
+- Provide a more realistic user experience
 
 To do:
-- Feature to be added 1
-- Feature to be added 2
+- Create a separate model for subjects and assignments
+- Create a grade point system that takes percentages and produces letter grades for assignments and course grade
+- Teacher can assign students grade for assignments and course
+- Create a student transcript
+- Provide testing for all routes
 
 
 ## Acknowledgements
 Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
-
-
-## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
-
-
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
-
-<!-- You don't have to include all sections - just the one's relevant to your project -->
+- Many thanks to general assembly staff for input and guidance.

@@ -154,7 +154,7 @@ describe('Test user endpoints', () => {
         .get('/users/admins/course')
         .set('Authorization', `Bearer ${token}`)
         expect(response.statusCode).toBe(200)
-        //expect(response.body).toHaveProperty('course') 
+        expect(response.body[0]).toHaveProperty('title') 
       })
 
       test('If user is an admin, it should update a course', async () => {
@@ -212,7 +212,7 @@ describe('Test user endpoints', () => {
             subject: 'math'
         })
         await course.save()
-        
+
         const response = await request(app)
           .delete(`/users/admins/course/${course._id}`)
           .set('Authorization', `Bearer ${token}`)

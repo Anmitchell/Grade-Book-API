@@ -11,13 +11,6 @@ scenarios:
             schoolId: "" 
             firstName: "Test"
             lastName: "user"
-            email: "test@example.com"
+            email: "{{ $randomString() }}"
             password: "Password123"
             role: "admin"
-  - flow:
-      - post:
-          url: "/users/admins/course"
-          json:
-            id: "course-id"
-            title: "course-title"
-            subject: "course-subject"
