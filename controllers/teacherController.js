@@ -1,6 +1,6 @@
 const User = require('../models/user')
 const Course = require('../models/course')
-const { enrollCourse } = require('./studentController')
+const { enrollCourse } = require('./studentController') 
 
 // teacher adds course they will teach
 exports.selectCourse = async (req, res) => {

@@ -123,5 +123,3 @@ exports.deleteCourse = async (req, res) => {
         res.status(400).json( {message: error.message})
     }
 }
-
-// current admin token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGEzMTgxYWI3NmQxZGJmNjkwZjY0OTIiLCJpYXQiOjE2ODg0MTAxMzh9.v-Y4EjmAbVPPKaIwcvjrS3w4604B_7beGrI__Hhh4eE
